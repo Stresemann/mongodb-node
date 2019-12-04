@@ -8,7 +8,7 @@ const test = async function(){
         gender: "Female"
     }
     await Person.addPerson(data);
-    const p = await Person.listPersons();
+    const p = await Person.findByName("Jane Doe");
     console.log(p);
 }
 

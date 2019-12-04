@@ -15,4 +15,8 @@ Schema.statics.listPersons = async function(){
     return await this.find();
 }
 
+Schema.statics.findByName = async function(name) {
+    return await this.find({'name': name})
+}
+
 module.exports = mongoose.model('person', Schema);

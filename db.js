@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://localhost:27017/test"; //connecting to ciphertrick
+const mongoURI = "mongodb://localhost:27017/test";
 const options = { 
     keepAlive: true, 
     keepAliveInitialDelay: 300000,
