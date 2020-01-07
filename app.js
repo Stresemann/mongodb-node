@@ -1,15 +1,25 @@
 require('./db');
 const Person = require('./models/person');
 
-const test = async function(){
+const init = async function(name) {
     const data = {
-        name: "Jane Doe",
+        name: name,
         age: 24,
         gender: "Female"
     }
+    console.log("adding data");
+    
     await Person.addPerson(data);
-    const p = await Person.findByName("Jane Doe");
-    console.log(p);
+}
+// init();
+
+const test = async function(){
+    return await Person.findByName("Jane Doe");
 }
 
-test();
+const addPerson = async function(name){
+    return await init(name);
+}
+
+exports.test = test;
+exports.addPerson = addPerson;
