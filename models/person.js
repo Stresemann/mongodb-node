@@ -7,7 +7,11 @@ var Schema = new mongoose.Schema({
 
 Schema.statics.addPerson = async function(person){
     var Person = new this(person);
-    var result =  await Person.save(person);
+    let filter = {"name": person.name};
+    var result =  await Person.save(person, (data, res) => {
+        console.log(data, res, "YES")
+    });
+    // let result = await Person.update(filter, {$set: person}, true);
     return result;
 }
 
